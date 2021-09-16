@@ -54,6 +54,7 @@
 
 
 (use-package! alchemist
+  :when (featurep! +alchemist)
   :hook (elixir-mode . alchemist-mode)
   :config
   (set-lookup-handlers! 'elixir-mode
@@ -76,7 +77,7 @@
 
 
 (use-package! alchemist-company
-  :when (featurep! :completion company)
+  :when (and (featurep! :completion company) (featurep! +alchemist))
   :commands alchemist-company
   :config
   (set-company-backend! 'alchemist-mode '(alchemist-company company-yasnippet))

@@ -22,10 +22,12 @@ or [[https://github.com/elixir-lsp/elixir-ls/][elixir-ls]].
 
 ** Module flags
 + ~+lsp~ Enable LSP support. Requires [[https://github.com/elixir-lsp/elixir-ls/][elixir-ls]].
++ =+alchemist= Enables alchemist.el. It's recommended to use =+lsp= instead since alchemist.el is unmaintained since 2018.
 
 ** Plugins
 + [[https://github.com/elixir-editors/emacs-elixir][elixir-mode]]
-+ [[https://github.com/tonini/alchemist.el][alchemist.el]]
++ =+alchemist=
+  + [[https://github.com/tonini/alchemist.el][alchemist.el]]
 + [[https://github.com/aaronjensen/flycheck-credo][flycheck-credo]]
 + [[https://github.com/ananthakumaran/exunit.el][exunit]]
 
