@@ -34,8 +34,7 @@
   :when (featurep! +rime)
   :after pyim
   :init
-  (setq liberime-auto-build t)
-  (setq liberime-user-data-dir (expand-file-name "rime" doom-cache-dir)))
+  (setq liberime-auto-build t))
 
 (use-package! pyim-liberime
   :when (featurep! +rime)
