@@ -2,6 +2,10 @@
 
 (defvar +notmuch-workspace-name "*notmuch*"
   "Name of the workspace created by `=notmuch', dedicated to notmuch.")
+(defvar +notmuch--old-wconf nil)
+
+(add-hook 'notmuch-hello-mode-hook #'+notmuch-init-h)
+
 
 ;;;###autoload
 (defun =notmuch ()
@@ -162,3 +166,17 @@
   "Don't prompt for confirmation when killing notmuch sentinel."
   (let (confirm-kill-processes)
     (apply fn args)))
+
+
+(defun +notmuch-init-h ()
+  (add-hook 'kill-buffer-hook #'+notmuch-kill-notmuch-h nil t))
+
+(defun +notmuch-kill-notmuch-h ()
+  ;; (prolusion-mail-hide)
+  (cond
+   ((and (modulep! :ui workspaces) (+workspace-exists-p +notmuch-workspace-name))
+    (+workspace/delete +notmuch-workspace-name))
+
+   (+notmuch--old-wconf
+    (set-window-configuration +notmuch--old-wconf)
+    (setq +notmuch--old-wconf nil))))
