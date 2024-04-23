@@ -38,7 +38,7 @@
 
 (use-package! pyim-liberime
   :when (modulep! +rime)
-  :after liberime
+  :after (pyim liberime)
   :config
   (setq pyim-default-scheme 'rime))
 
