@@ -50,16 +50,16 @@
           :desc "Load file into REPL"         "f" #'geiser-load-file
           :desc "Restart REPL"                "r" #'geiser-restart-repl))
         (:map scheme-mode-map
-         (:prefix ("e" . "eval")
-          :desc "Eval buffer"                 "b" #'geiser-eval-buffer
-          :desc "Eval buffer and go to REPL"  "B" #'geiser-eval-buffer-and-go
-          :desc "Eval last sexp"              "e" #'geiser-eval-last-sexp
-          :desc "Eval definition"             "d" #'geiser-eval-definition
-          :desc "Eval defn. and go to REPL"   "D" #'geiser-eval-definition-and-go
-          :desc "Eval region"                 "r" #'geiser-eval-region
-          :desc "Eval region and go to REPL"  "R" #'geiser-eval-region-and-go)
-         (:prefix ("r" . "repl")
-          :desc "Load current buffer in REPL" "b" #'geiser-load-current-buffer))
+              (:prefix ("e" . "eval")
+               :desc "Eval buffer"                 "b" #'geiser-eval-buffer
+               :desc "Eval buffer and go to REPL"  "B" #'geiser-eval-buffer-and-go
+               :desc "Eval last sexp"              "e" #'geiser-eval-last-sexp
+               :desc "Eval definition"             "d" #'geiser-eval-definition
+               :desc "Eval defn. and go to REPL"   "D" #'geiser-eval-definition-and-go
+               :desc "Eval region"                 "r" #'geiser-eval-region
+               :desc "Eval region and go to REPL"  "R" #'geiser-eval-region-and-go)
+              (:prefix ("r" . "repl")
+               :desc "Load current buffer in REPL" "b" #'geiser-load-current-buffer))
         (:map geiser-repl-mode-map
          :desc "Clear REPL buffer"            "c" #'geiser-repl-clear-buffer
          :desc "Quit REPL"                    "q" #'geiser-repl-exit)))
@@ -74,7 +74,6 @@
         :map (scheme-mode-map geiser-repl-mode-map)
         :desc "Expand macro by one step" "m" #'macrostep-expand
         :desc "Recursively expand macro" "M" #'macrostep-geiser-expand-all))
-
 
 (use-package! flycheck-guile
   :when (modulep! +guile)
